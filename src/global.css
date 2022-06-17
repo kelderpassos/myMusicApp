@@ -1,0 +1,33 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --silver: #c0c0c0;
+  --silver-50: #FAFAFA;
+  --silver-100: #E1E5EB;
+  --silver-200: #9a9a9a;
+  --silver-300:#868686;
+  --silver-500: #606060;
+
+  --gray-500: #606B6F;
+
+
+  --darkblue-900: #023031;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--silver-50);
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}

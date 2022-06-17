@@ -1,0 +1,18 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  font-size: 60px;
+  letter-spacing: 0.02em;
+  color: var(--silver-500);
+}
+
+.loadingUser {
+  color: var(--black);
+  font-weight: 400;
+  margin-top: 3px;
+}

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  gap: 10px;  
+}
+
+.songContainer {
+  
+}
+
+.songContainer audio {
+  border-radius: 50px;
+  background: none;
+  background: white;
+}
+
+.songContainer {
+  
+}
