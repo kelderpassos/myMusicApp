@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
+import { Loading } from '../Components/Loading';
 import MusicCard from '../Components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import styles from './Album.module.css';
@@ -29,12 +30,15 @@ export function Album() {
   return (
     <div>
       <Header />
-      <main className={styles.container}>
-        <div className={styles.artistInfo}>
-          <img src={artistInfo.artworkUrl100}></img>
-          <h4>{artistInfo.collectionName}</h4>
-        </div>
-        <MusicCard songs={songs}/>
+      {loading && <Loading />}
+      <main>
+        <section className={styles.container}>
+          <div className={styles.artistInfo}>
+            <img src={artistInfo.artworkUrl100}></img>
+            <h4>{artistInfo.collectionName}</h4>
+          </div>
+          <MusicCard songs={songs}/>
+        </section>
       </main>
     </div>
   )

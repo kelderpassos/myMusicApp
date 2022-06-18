@@ -16,7 +16,7 @@ export function Search() {
     setSearchedArtist(target.value);
   };
 
-  const handleLoginButton = async (event) => {
+  const handleSearchButton = async (event) => {
     event.preventDefault();
     setSearch('');
     setLoading(true);
@@ -34,27 +34,32 @@ export function Search() {
         <main>
           <div className={styles.container}>
             <div className={styles.inputContainer}>
-              <label>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="What's your favorite artist?"
-                  onChange={handleInput}
-                  value={searchInput}
-                  required
-                />
-              </label>
-              <button
-                type="submit"
-                onClick={handleLoginButton}
-                disabled={isInputEmpty}
-              >
-                Search
-              </button>
+              <form>
+                <label>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="What's your favorite artist?"
+                    onChange={handleInput}
+                    value={searchInput}
+                    required
+                  />
+                </label>
+                <button
+                  type="submit"
+                  onClick={handleSearchButton}
+                  disabled={isInputEmpty}
+                >
+                  Search
+                </button>
+              </form>
             </div>
           </div>
           <div className={styles.artistName}>
-            <p>Results for <span>{`${searchedArtist}`}</span></p>
+            
+            {(results.length > 0) ? <p>Results for <span>{`${searchedArtist}`}</span></p>
+              : <span>{`${searchedArtist}`}</span>
+            }            
           </div>
             {results.length === 0 && 
               <div className={styles.notFoundAlbum}>

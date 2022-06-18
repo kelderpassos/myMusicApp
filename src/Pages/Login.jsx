@@ -36,22 +36,24 @@ function Login() {
 
       </div>
       <div className={styles.inputContainer}>
-        <label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Name"
-            onChange={handleInput}
-            required
-          />
-        </label>
-        <button
-          type="submit"
-          onClick={handleLoginButton}
-          disabled={isInputEmpty}
-        >
-          Log in
-        </button>
+        <form>
+          <label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Name"
+              onChange={handleInput}
+              required
+            />
+          </label>
+          <button
+            type="submit"
+            onClick={handleLoginButton}
+            disabled={isInputEmpty}
+          >
+            Log in
+          </button>
+        </form>
       </div>
     </div>
   )

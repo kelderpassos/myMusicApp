@@ -1,4 +1,4 @@
-.container {
+.containerHeader {
   background-color: var(--silver);
   display: flex;
   justify-content: space-between;
@@ -39,9 +39,7 @@
 }
 
 .containerLinks section {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem 21.7rem;
+  padding: 1rem 24.5rem;
 
   font-size: larger;
   font-weight: bold;
@@ -49,6 +47,11 @@
   letter-spacing: 0.02rem;
 
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--silver-200);
+}
+
+.containerLinks section:hover {
+  
   background-color: var(--silver-100);
 }
 

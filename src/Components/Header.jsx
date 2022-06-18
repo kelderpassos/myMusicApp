@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <header>
-      <div className={styles.container}>
+      <div className={styles.containerHeader}>
         <img className={styles.logo} src={logo}/>
         <section className={styles.containerUser}>
           <div><UserCircle size={25} /> {loading ? <LoadingUser /> : <span>{username}</span>}</div>

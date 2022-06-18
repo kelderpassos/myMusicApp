@@ -6,15 +6,36 @@
 }
 
 .songContainer {
-  
+  width: 24%;
 }
 
 .songContainer audio {
   border-radius: 50px;
-  background: none;
-  background: white;
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  margin-top: 0.5rem;
+  width: 200px;
+  height: 25px;
 }
 
-.songContainer {
-  
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  color: var(--silver-200);
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 5px;
+}
+
+label:hover {
+  color: var(--red);
+  transition: color 0.5s;
+}
+
+input[type="checkbox"]:checked + label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 5px;
+  color: var(--red);
 }
