@@ -1,18 +1,24 @@
+.albumContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .container {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem;
+  margin-top: 4rem;
   border-radius: 10px;
   gap: 10px;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--white);
   width: 90rem;
-  margin-left: 27rem;
 }
 
 .artistInfo {
   margin-left: 2rem;
-
+  
 }
 
 .artistInfo img {
@@ -27,5 +33,10 @@
   color: var(--silver-500);
 }
 
-/* 
-  flex-direction: column; */
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  gap: 10px;
+}
+

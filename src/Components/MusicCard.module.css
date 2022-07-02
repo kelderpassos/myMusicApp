@@ -1,15 +1,28 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2rem;
-  gap: 10px;  
-}
-
 .songContainer {
-  width: 24%;
+  width: 17rem;
 }
 
-.songContainer audio {
+.favoriteContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  
+  border-radius: 10px;
+  gap: 10px;
+  width: 40rem;
+
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+}
+
+.favoriteContainer p {
+  text-align: center;
+  width: 12rem;
+}
+
+.audioPlayer {
   border-radius: 50px;
   filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
   margin-top: 0.5rem;

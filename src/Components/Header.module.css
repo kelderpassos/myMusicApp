@@ -35,24 +35,31 @@
 .containerLinks {
   display: flex;
   justify-content: space-around;
-
 }
 
-.containerLinks section {
-  padding: 1rem 24.5rem;
+.links {
+  padding: 1rem;
+  width: 42.6rem;
 
   font-size: larger;
   font-weight: bold;
   color: var(--silver-500);
   letter-spacing: 0.02rem;
+  display: flex;
+  justify-content: center;
 
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--silver-200);
 }
 
-.containerLinks section:hover {
-  
+.containerLinks section:hover {  
   background-color: var(--silver-100);
+}
+
+@media (max-width: 1300px) {
+  .links {
+    width: 27rem;
+  }
 }
 
 @media (max-width: 768px) {

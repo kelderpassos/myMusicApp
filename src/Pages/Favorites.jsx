@@ -1,11 +1,53 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import Header from '../Components/Header';
+import { Loading } from '../Components/Loading';
+import MusicCard from '../Components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import styles from './Favorites.module.css';
 
 export function Favorites() {
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    fetchFavoriteSongs()
+  }, []);
+
+  const fetchFavoriteSongs = async () => {
+    setLoading(true);
+    const data = await getFavoriteSongs();
+    setFavoriteSongs(data);
+    setLoading(false);
+  }
+
+  console.log(favoriteSongs);
+  console.log('teste Favorites');
+
   return (
     <div>
       <Header />
-      <p>Sorry!</p>
-      <p>We couldn't find the page you're looking for</p>
+      {loading ? <Loading /> : (
+        <main className={styles.favoritesContainer}>
+        <section className={styles.favoritedSong}>
+        {favoriteSongs.map((song) => (
+          <MusicCard
+            key={song.trackId}
+            albumCoverSmall={ song.artworkUrl60}
+            albumCover={ song.artworkUrl100 }
+            trackName={ song.trackName }
+            previewUrl={ song.previewUrl }
+            trackId={ song.trackId }
+            trackNumber={ song.trackNumber }
+            song={ song }
+            url={location.pathname}
+          />
+        ))}
+        </section>
+      </main>
+      )}
+      
     </div>
   )
 }

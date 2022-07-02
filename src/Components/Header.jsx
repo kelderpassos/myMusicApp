@@ -30,9 +30,9 @@ function Header() {
         </section>
       </div>
       <nav className={styles.containerLinks}>
-        <section><NavLink to="/search">Search</NavLink></section>
-        <section><NavLink to="/favorites">Favorites</NavLink></section>
-        <section><NavLink to="/profile">Profile</NavLink></section>
+        <NavLink to="/search"><section className={styles.links}>Search</section></NavLink>
+        <NavLink to="/favorites"><section className={styles.links}>Favorites</section></NavLink>
+        <NavLink to="/profile"><section className={styles.links}>Profile</section></NavLink>
       </nav>
     </header>
   )

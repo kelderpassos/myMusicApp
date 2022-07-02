@@ -37,7 +37,6 @@ function Login() {
       </div>
       <div className={styles.inputContainer}>
         <form>
-          <label>
             <input
               type="text"
               name="username"
@@ -45,7 +44,6 @@ function Login() {
               onChange={handleInput}
               required
             />
-          </label>
           <button
             type="submit"
             onClick={handleLoginButton}
