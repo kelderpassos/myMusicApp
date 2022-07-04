@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router';
 import Header from '../Components/Header';
 import { Loading } from '../Components/Loading';
 import MusicCard from '../Components/MusicCard';
@@ -9,8 +8,7 @@ import styles from './Favorites.module.css';
 export function Favorites() {
   const [favoriteSongs, setFavoriteSongs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const location = useLocation();
-
+  
   useEffect(() => {
     fetchFavoriteSongs()
   }, []);
@@ -21,9 +19,6 @@ export function Favorites() {
     setFavoriteSongs(data);
     setLoading(false);
   }
-
-  console.log(favoriteSongs);
-  console.log('teste Favorites');
 
   return (
     <div>
@@ -41,7 +36,7 @@ export function Favorites() {
             trackId={ song.trackId }
             trackNumber={ song.trackNumber }
             song={ song }
-            url={location.pathname}
+            fetchFavoriteSongs={ fetchFavoriteSongs }
           />
         ))}
         </section>
