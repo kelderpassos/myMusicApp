@@ -14,17 +14,23 @@ export function Album() {
   const { id } = useParams();
   
   useEffect(() => {
-    const fetchSongs = async () => {
-      setLoading(true);
-      const response = await getMusics(id)
-      setArtistInfo(response[0]);
-      setAlbumInfo(response);
-      setLoading(false);
-    };
-
     fetchSongs();
   }, []);
 
+  const fetchSongs = async () => {
+    setLoading(true);
+    const response = await getMusics(id)
+    setArtistInfo(response[0]);
+    setAlbumInfo(response);
+    setLoading(false);
+  };
+
+  const onSelectingSong = () => { // ainda necessário fazer o componente recarregar
+    setLoading(true);
+    setLoading(false);
+    console.log(loading);
+  }
+  
   return (
     <div>
       <Header />
@@ -44,7 +50,10 @@ export function Album() {
               previewUrl={ song.previewUrl }
               trackId={ song.trackId }
               trackNumber={ song.trackNumber }
-              song={ song } />))}
+              song={ song }
+              onSelectingSong={ onSelectingSong }
+            />
+            ))}
           </section>
         </section>
       </main>

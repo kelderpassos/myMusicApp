@@ -3,17 +3,19 @@ import { useLocation } from 'react-router';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import styles from './MusicCard.module.css';
 
-function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCoverSmall }) {
+function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCoverSmall, fetchFavoriteSongs, teste }) {
   const [isChecked, setIsChecked] = useState(false);
   const [removed, setRemoved] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    fetchFavoriteSongs();
+    renderFavoriteSongs();
+    console.log('teste');
   }, [])
   
   
-  const fetchFavoriteSongs = async() => {
+  const renderFavoriteSongs = async() => {
+    console.log('teste');
     const favorites = await getFavoriteSongs();
     const checkFavorites = favorites.some((song) => song.trackId === trackId );
     setIsChecked(checkFavorites)
@@ -21,12 +23,14 @@ function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCov
   
 
   const handleCheckbox = async ({target}) => {
+
     if (target.checked) {
       await addSong(song);
-      fetchFavoriteSongs();
+      await teste()
     } else {
       await removeSong(song);
-      fetchFavoriteSongs();
+      await teste()
+      await fetchFavoriteSongs();
     }
   }
 
