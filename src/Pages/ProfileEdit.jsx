@@ -9,6 +9,7 @@ import styles from './ProfileEdit.module.css';
 export function ProfileEdit() {
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
+  // const [isDisabled, setIsDisabled] = useState(true);
 
   useEffect(() => {
     fetchUser();
@@ -21,6 +22,14 @@ export function ProfileEdit() {
     setLoading(false);
   }
 
+  const handleInput = ({target}) => {
+    setUserData(target.value);
+  }
+
+  const handleSubmit = ({target}) => {
+    console.log(target);
+  }
+
   return (
     <div>
       <Header />
@@ -28,16 +37,22 @@ export function ProfileEdit() {
         <section className={styles.container}>
         {loading ? <Loading /> : (
           <section className={styles.userContainer}>
-          <div className={styles.userImage}>
-            {userData.image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ userData.image } alt={ `${userData.name} photo`} />}            
-            <NavLink to="/profile/edit"><button type="button" className={styles.editButton}>Profile Edit</button></NavLink>
-          </div>
-          <h4 className={styles.nameHeader}>Name:</h4>
-          <p className={styles.name}>{ userData.name }</p>
-          <h4 className={styles.emailHeader}>Email:</h4>
-          <p className={styles.email}>{ userData.email }</p>
-          <h4 className={styles.descriptionHeader}>Description:</h4>
-          <p className={styles.description}>{ userData.description }</p>
+          <form onSubmit={ handleSubmit }>
+            <div className={styles.userImage}>
+              {userData.image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ userData.image } alt={ `${userData.name} photo`} />}            
+            <input type="text" />
+            </div>
+
+              <h4 className={styles.nameHeader}>Name</h4>
+              <p>Feel free to use your social name</p>
+              <input type="text" placeholder="Name" onChange={ handleInput } required />
+              <h4 className={styles.emailHeader}>Email</h4>
+              <input type="text" placeholder="username@user.com" onChange={ handleInput } required />
+              <p className={styles.email}>{ userData.email }</p>
+              <h4 className={styles.descriptionHeader}>Description</h4>
+              <input type="textbox" placeholder="About me" onChange={ handleInput } required />
+              <button type="submit" >Save</button>
+          </form>
         </section>
         )}
         </section>
