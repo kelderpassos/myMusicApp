@@ -1,4 +1,82 @@
-.container {
+.userContainer {
   display: flex;
   justify-content: center;
+
+  margin-top: 3rem;
 }
+
+.userContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userImage {
+  display: flex;
+}
+
+.userImage input {
+  height: 2rem;
+  margin-top: 1.3rem;
+  margin-left: 0.5rem;
+  padding-left: 10px;
+
+  border: var(--silver-100) solid 1px;
+  outline: none;
+}
+
+.inputContainer h4 {
+  color: var(--silver-600);
+
+  margin-top: 1rem;
+}
+
+.inputContainer > p {
+  margin-top: 0.2rem;
+  font-style: italic;
+
+  color: var(--goldenrod);
+}
+
+.inputContainer input {
+  height: 2rem;
+  margin-top: 0.3rem;
+  padding-left: 10px;
+  width: 20rem;
+
+  border: var(--silver-100) solid 1px;
+  outline: none;
+}
+
+.description {
+  padding-bottom: 8rem;
+  margin-top: 0.3rem;
+  padding-left: 10px;
+  padding-top: 0.2rem;
+
+  border: var(--silver-100) solid 1px;
+  outline: none;
+}
+
+.saveBtn {
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+
+/* 
+.username {
+  margin-top: 1rem;
+}
+
+
+.email {
+  margin-top: 1rem;
+}
+
+.description {
+  margin-top: 1rem;
+} */

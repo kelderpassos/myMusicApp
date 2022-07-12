@@ -68,30 +68,36 @@ export function ProfileEdit() {
   return (
     <div>
       <Header />
-      <main>
-        <section className={styles.container}>
+      <main>        
         {loading ? <Loading /> : (
           <section className={styles.userContainer}>
           <form onSubmit={ handleSubmit }>
             <div className={styles.userImage}>
-              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ userData.image } alt={ `user's photo`} />}            
-            <input type="text" />
+              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`} />}            
+            <input type="text" placeholder="Set a link" onChange={ handleInput }/>
             </div>
-              <h4 className={styles.nameHeader}>Name</h4>
+            <div className={styles.inputContainer}>
+              <h4 className={styles.username}>Name</h4>
               <p>Feel free to use your social name</p>
               <input type="text"
               name="name" placeholder="Name" onChange={ handleInput } required />
-              <h4 className={styles.emailHeader}>Email</h4>
+              <h4 className={styles.email}>Email</h4>
               <input type="text"
               name="email" placeholder="username@user.com" onChange={ handleInput } required />
-              <h4 className={styles.descriptionHeader}>Description</h4>
-              <input type="textarea"
-              name="description" placeholder="About me" onChange={ handleInput } required />
-              <button type="submit" disabled={isDisabled}>Save</button>
+              <h4>Description</h4>              
+            </div>              
+                <input
+                  type="textarea"
+                  name="description" placeholder="About me"
+                  onChange={ handleInput }
+                  required
+                  className={styles.description}
+                />
+              <button type="submit" disabled={isDisabled}
+              className={styles.saveBtn}>Save</button>
           </form>
         </section>
         )}
-        </section>
       </main>
     </div>
   )
