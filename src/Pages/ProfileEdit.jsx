@@ -7,7 +7,6 @@ import { getUser, updateUser } from "../services/userAPI";
 import styles from './ProfileEdit.module.css';
 
 export function ProfileEdit() {
-  // const [userData, setUserData] = useState({});
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [image, setImage] = useState('');
@@ -29,7 +28,10 @@ export function ProfileEdit() {
     setLoading(false);
   }
 
-  const isDisabled = username.length > 0 && email.length > 1 && description.length > 0;
+  const isDisabled = username.length > 0 && email.length >= 0 && description.length === 0;
+
+  console.log(isDisabled);
+  console.log(email.length);
 
   const handleInput = ({target}) => {
     switch (target.name) {
