@@ -58,27 +58,3 @@
   cursor: not-allowed;
   background-color: var(--silver-100);
 }
-
-@media (max-width: 768px) {
-  html {
-    font-size: 87,5%;
-  }
-
-  .inputContainer {
-    width: 25rem;
-  }
-  .inputContainer input {
-    border: var(--silver-100) solid 1px;
-    outline: none;
-  
-    height: 2rem;
-    width: 20rem;
-    padding-left: 10px;
-  }
-  
-  .inputContainer button {  
-    height: 2rem;
-    width: 20rem;
-    padding-left: 10px;
-  }
-}

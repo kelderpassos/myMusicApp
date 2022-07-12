@@ -72,7 +72,7 @@
     flex-direction: column;
   }
 
-  .containerLinks section {
-    padding: 1rem;
+  .links {
+    width: 27.5rem;
   }
 }
