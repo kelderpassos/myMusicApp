@@ -7,9 +7,9 @@ import { getUser, updateUser } from "../services/userAPI";
 import styles from './ProfileEdit.module.css';
 
 export function ProfileEdit() {
+  const [image, setImage] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
@@ -17,7 +17,7 @@ export function ProfileEdit() {
   useEffect(() => {
     fetchUser();
   }, []);
-
+  
   const fetchUser = async () => {
     setLoading(true);
     const { name, email, image, description} = await getUser();
@@ -27,11 +27,18 @@ export function ProfileEdit() {
     setDescription(description);
     setLoading(false);
   }
+  
+  const REGEX_PATTERN = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+  const validEmail = REGEX_PATTERN.test(email);
+  const requirements = [
+    validEmail,
+    username.length > 0,
+    email.length > 0,
+    description.length > 0,
+  ];
 
-  const isDisabled = username.length > 0 && email.length >= 0 && description.length === 0;
-
-  console.log(isDisabled);
-  console.log(email.length);
+  const isDisabled = requirements.every((condition) => condition === true);    
 
   const handleInput = ({target}) => {
     switch (target.name) {
@@ -46,7 +53,7 @@ export function ProfileEdit() {
         break;
       default:
         break;
-    }
+    }  
   }
     
   const handleSubmit = (e) => {
@@ -89,8 +96,13 @@ export function ProfileEdit() {
                   required
                   className={styles.description}
                 />
-              <button type="submit" disabled={isDisabled}
-              className={styles.saveBtn}>Save</button>
+              <button
+                type="submit" 
+                className={styles.saveBtn}
+                disabled={!isDisabled}
+              >
+                Save
+              </button>
           </form>
         </section>
         )}
