@@ -30,11 +30,19 @@ export function ProfileEdit() {
     setLoading(false);
   }
 
+  
+
   const validateButton = () => {
     if (username.length > 0 && email.length > 1 && description.length > 0) {
+      console.log('chamou if');
       setIsDisabled(false);
-    }    
+    } else {
+      console.log('chamou else');
+      setIsDisabled(true);
+    }
   }
+  console.log(description.length);
+  console.log(isDisabled);
 
   const handleInput = ({target}) => {
     switch (target.name) {

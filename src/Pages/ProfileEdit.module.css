@@ -64,7 +64,13 @@
   display: flex;
   justify-content: center;
 
+  border: none;
+  border-radius: 2px;
+  background-color: var(--silver-200);
+  color: var(--white);
+
 }
+
 
 
 /* 
