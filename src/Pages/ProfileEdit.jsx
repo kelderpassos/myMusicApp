@@ -13,7 +13,6 @@ export function ProfileEdit() {
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(true);
   const history = useNavigate();
 
   useEffect(() => {
@@ -30,11 +29,7 @@ export function ProfileEdit() {
     setLoading(false);
   }
 
-  const validateButton = () => {
-    if (username.length > 0 && email.length > 1 && description.length > 0) {
-      setIsDisabled(false);
-    }    
-  }
+  const isDisabled = username.length > 0 && email.length > 1 && description.length > 0;
 
   const handleInput = ({target}) => {
     switch (target.name) {
@@ -50,7 +45,6 @@ export function ProfileEdit() {
       default:
         break;
     }
-    validateButton();
   }
     
   const handleSubmit = (e) => {
