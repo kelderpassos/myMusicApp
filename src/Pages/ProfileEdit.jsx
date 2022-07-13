@@ -7,19 +7,18 @@ import { getUser, updateUser } from "../services/userAPI";
 import styles from './ProfileEdit.module.css';
 
 export function ProfileEdit() {
-  // const [userData, setUserData] = useState({});
+  const [image, setImage] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
+  // const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(true);
   const history = useNavigate();
 
   useEffect(() => {
     fetchUser();
   }, []);
-
+  
   const fetchUser = async () => {
     setLoading(true);
     const { name, email, image, description} = await getUser();
@@ -29,20 +28,21 @@ export function ProfileEdit() {
     setDescription(description);
     setLoading(false);
   }
-
   
+  const REGEX_PATTERN = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+  let errorMsg;
+  const validEmail = REGEX_PATTERN.test(email);
+  const requirements = [
+    validEmail,
+    username.length > 0,
+    email.length > 0,
+    description.length > 0,
+  ];
 
-  const validateButton = () => {
-    if (username.length > 0 && email.length > 1 && description.length > 0) {
-      console.log('chamou if');
-      setIsDisabled(false);
-    } else {
-      console.log('chamou else');
-      setIsDisabled(true);
-    }
-  }
-  console.log(description.length);
-  console.log(isDisabled);
+  !validEmail ? errorMsg ='Please, type a valid e-mail' : errorMsg = '';
+
+  const isDisabled = requirements.every((condition) => condition === true);    
 
   const handleInput = ({target}) => {
     switch (target.name) {
@@ -55,10 +55,12 @@ export function ProfileEdit() {
       case 'description':
         setDescription(target.value);
         break;
+      case 'image':
+        setImage(target.value);
+        break;
       default:
         break;
     }
-    validateButton();
   }
     
   const handleSubmit = (e) => {
@@ -80,9 +82,9 @@ export function ProfileEdit() {
         {loading ? <Loading /> : (
           <section className={styles.userContainer}>
           <form onSubmit={ handleSubmit }>
-            <div className={styles.userImage}>
-              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`} />}            
-            <input type="text" placeholder="Set a link" onChange={ handleInput }/>
+            <div className={styles.userImageContainer}>
+              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`}  className={styles.userImage} />}            
+            <input name="image" type="text" placeholder="Set the exact link of your photo" onChange={ handleInput }/>
             </div>
             <div className={styles.inputContainer}>
               <h4 className={styles.username}>Name</h4>
@@ -91,18 +93,28 @@ export function ProfileEdit() {
               name="name" placeholder="Name" onChange={ handleInput } required />
               <h4 className={styles.email}>Email</h4>
               <input type="text"
-              name="email" placeholder="username@user.com" onChange={ handleInput } required />
+              name="email" placeholder="username@user.com" onChange={ handleInput }
+              required />
+              <p>{errorMsg}</p>
               <h4>Description</h4>              
             </div>              
-                <input
+                <textarea
                   type="textarea"
-                  name="description" placeholder="About me"
+                  name="description"
+                  cols="20"
+                  wrap="hard"
+                  placeholder="About me"
                   onChange={ handleInput }
                   required
                   className={styles.description}
                 />
-              <button type="submit" disabled={isDisabled}
-              className={styles.saveBtn}>Save</button>
+              <button
+                type="submit" 
+                className={styles.saveBtn}
+                disabled={!isDisabled}
+              >
+                Save
+              </button>
           </form>
         </section>
         )}

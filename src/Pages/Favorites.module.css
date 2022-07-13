@@ -2,5 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .favoritesContainer {
+    margin-bottom: 1.5rem;
+    width: 27rem;
+  }
 }
