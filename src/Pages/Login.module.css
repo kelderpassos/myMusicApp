@@ -61,24 +61,18 @@
 
 @media (max-width: 768px) {
   html {
-    font-size: 87,5%;
+    font-size: 87.5%;
   }
 
-  .inputContainer {
-    width: 25rem;
+  .inputContainer form {
+    width: 24rem;
   }
+
   .inputContainer input {
-    border: var(--silver-100) solid 1px;
-    outline: none;
-  
-    height: 2rem;
     width: 20rem;
-    padding-left: 10px;
   }
-  
-  .inputContainer button {  
-    height: 2rem;
+
+  .inputContainer button {
     width: 20rem;
-    padding-left: 10px;
   }
 }

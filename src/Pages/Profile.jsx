@@ -28,8 +28,8 @@ export function Profile() {
       <main className={styles.container}>
         {loading ? <Loading /> : (
           <section className={styles.userContainer}>
-          <div className={styles.userImage}>
-            {userData.image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ userData.image } alt={ `${userData.name} photo`} />}            
+          <div className={styles.userImageContainer}>
+            {userData.image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ userData.image } alt={ `${userData.name} photo`} className={styles.userImage} />}            
             <NavLink to="/profile/edit"><button type="button" className={styles.editButton}>Profile Edit</button></NavLink>
           </div>
           <h4 className={styles.nameHeader}>Name:</h4>

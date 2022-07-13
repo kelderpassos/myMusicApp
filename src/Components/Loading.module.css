@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 10rem;
 }
 
 .message {
@@ -15,4 +15,10 @@
   color: var(--black);
   font-weight: 400;
   margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .message {
+    font-size: 3rem;
+  }
 }

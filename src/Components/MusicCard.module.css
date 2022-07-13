@@ -52,3 +52,15 @@ input[type="checkbox"]:checked + label {
   margin-left: 5px;
   color: var(--red);
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .favoriteContainer {
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+  }
+}

@@ -25,7 +25,7 @@ export function Album() {
     setLoading(false);
   };
 
-  const onSelectingSong = () => { // ainda necessário fazer o componente recarregar
+  const onSelectingSong = () => {
     setLoading(true);
     setLoading(false);
     console.log(loading);
