@@ -93,7 +93,8 @@ export function ProfileEdit() {
               name="name" placeholder="Name" onChange={ handleInput } required />
               <h4 className={styles.email}>Email</h4>
               <input type="text"
-              name="email" placeholder="username@user.com" onChange={ handleInput } required />
+              name="email" placeholder="username@user.com" onChange={ handleInput }
+              required />
               <p>{errorMsg}</p>
               <h4>Description</h4>              
             </div>              
