@@ -11,6 +11,7 @@ export function ProfileEdit() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
+  // const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
 
@@ -30,6 +31,7 @@ export function ProfileEdit() {
   
   const REGEX_PATTERN = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   
+  let errorMsg;
   const validEmail = REGEX_PATTERN.test(email);
   const requirements = [
     validEmail,
@@ -37,6 +39,8 @@ export function ProfileEdit() {
     email.length > 0,
     description.length > 0,
   ];
+
+  !validEmail ? errorMsg ='Please, type a valid e-mail' : errorMsg = '';
 
   const isDisabled = requirements.every((condition) => condition === true);    
 
@@ -53,7 +57,7 @@ export function ProfileEdit() {
         break;
       default:
         break;
-    }  
+    }
   }
     
   const handleSubmit = (e) => {
@@ -87,6 +91,7 @@ export function ProfileEdit() {
               <h4 className={styles.email}>Email</h4>
               <input type="text"
               name="email" placeholder="username@user.com" onChange={ handleInput } required />
+              <p>{errorMsg}</p>
               <h4>Description</h4>              
             </div>              
                 <input
