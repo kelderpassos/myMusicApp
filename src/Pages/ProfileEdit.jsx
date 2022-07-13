@@ -55,6 +55,9 @@ export function ProfileEdit() {
       case 'description':
         setDescription(target.value);
         break;
+      case 'image':
+        setImage(target.value);
+        break;
       default:
         break;
     }
@@ -81,7 +84,7 @@ export function ProfileEdit() {
           <form onSubmit={ handleSubmit }>
             <div className={styles.userImage}>
               {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`} />}            
-            <input type="text" placeholder="Set a link" onChange={ handleInput }/>
+            <input name="image" type="text" placeholder="Set the exact link of your photo" onChange={ handleInput }/>
             </div>
             <div className={styles.inputContainer}>
               <h4 className={styles.username}>Name</h4>
