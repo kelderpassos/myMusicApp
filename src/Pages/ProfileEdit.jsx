@@ -82,8 +82,8 @@ export function ProfileEdit() {
         {loading ? <Loading /> : (
           <section className={styles.userContainer}>
           <form onSubmit={ handleSubmit }>
-            <div className={styles.userImage}>
-              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`} />}            
+            <div className={styles.userImageContainer}>
+              {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`}  className={styles.userImage} />}            
             <input name="image" type="text" placeholder="Set the exact link of your photo" onChange={ handleInput }/>
             </div>
             <div className={styles.inputContainer}>
@@ -97,9 +97,12 @@ export function ProfileEdit() {
               <p>{errorMsg}</p>
               <h4>Description</h4>              
             </div>              
-                <input
+                <textarea
                   type="textarea"
-                  name="description" placeholder="About me"
+                  name="description"
+                  cols="20"
+                  wrap="hard"
+                  placeholder="About me"
                   onChange={ handleInput }
                   required
                   className={styles.description}

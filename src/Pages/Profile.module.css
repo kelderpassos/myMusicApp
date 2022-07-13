@@ -18,13 +18,21 @@
   align-items: center;
 }
 
-.userImage {
+.userImageContainer {
   display: flex;
 }
 
 .userIcon {
   margin-right: 3rem;
   margin-left: 10.5rem;
+}
+
+.userImage {
+  height: 10rem;
+  width: 10rem;
+
+  margin-left: 7.7rem;
+  margin-right: 1rem;
 }
 
 .editButton {  
@@ -34,6 +42,7 @@
   height: 2rem;
   width: 7rem;
   margin-top: 1rem;
+  
 
   background-color: var(--silver-200);
   color: var(--white);

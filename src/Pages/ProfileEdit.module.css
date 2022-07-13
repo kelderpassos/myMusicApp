@@ -11,18 +11,25 @@
   justify-content: center;
 }
 
-.userImage {
+.userImageContainer {
   display: flex;
 }
 
-.userImage input {
+
+.userImageContainer input {
   height: 2rem;
   margin-top: 1.3rem;
   margin-left: 0.5rem;
   padding-left: 10px;
-
+  width: 17rem;
+  
   border: var(--silver-100) solid 1px;
   outline: none;
+}
+
+.userImage {
+  height: 10rem;
+  width: 10rem;
 }
 
 .inputContainer h4 {
@@ -42,7 +49,7 @@
   height: 2rem;
   margin-top: 0.3rem;
   padding-left: 10px;
-  width: 20rem;
+  width: 30rem;
 
   border: var(--silver-100) solid 1px;
   outline: none;
@@ -54,6 +61,7 @@
   padding-left: 10px;
   padding-top: 0.2rem;
 
+  overflow-wrap: break-word;
   border: var(--silver-100) solid 1px;
   outline: none;
 }
