@@ -31,7 +31,7 @@
   height: 10rem;
   width: 10rem;
 
-  margin-left: 7.7rem;
+  margin-left: 8rem;
   margin-right: 1rem;
 }
 
@@ -62,4 +62,40 @@
 
 .descriptionHeader {
   margin-top: 1rem;
+}
+
+.description {
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .userContainer {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    width: 22rem;
+  }
+
+  .userImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userIcon {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .userImage {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

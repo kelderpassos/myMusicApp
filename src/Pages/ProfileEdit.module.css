@@ -87,3 +87,23 @@
   cursor: not-allowed;
   background-color: var(--silver-100);
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .userContainer {
+    margin-top: 1.5rem;
+  }
+
+  .userImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputContainer input {
+    width: 22rem;
+  };
+}
