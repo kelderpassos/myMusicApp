@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import logo from '../Images/logo.png';
+import logo from '../images/logo.png';
 import { UserCircle } from 'phosphor-react';
 import { getUser } from '../services/userAPI';
 import { useState, useEffect } from 'react';

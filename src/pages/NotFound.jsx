@@ -1,5 +1,5 @@
 import styles from './NotFound.module.css';
-import logo from '../Images/logo.png'; // colocar svg
+import logo from '../images/logo.png'; // colocar svg
 
 export function NotFound() {
   return (

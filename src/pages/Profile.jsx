@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { UserCircle } from "phosphor-react";
 import { NavLink } from "react-router-dom";
-import Header from "../Components/Header";
-import { Loading } from '../Components/Loading';
+import Header from "../components/Header";
+import { Loading } from '../components/Loading';
 import { getUser } from "../services/userAPI";
 import styles from './Profile.module.css'
 
