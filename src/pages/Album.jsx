@@ -24,12 +24,6 @@ export function Album() {
     setAlbumInfo(response);
     setLoading(false);
   };
-
-  const onSelectingSong = () => {
-    setLoading(true);
-    setLoading(false);
-    console.log(loading);
-  }
   
   return (
     <div>
@@ -51,7 +45,6 @@ export function Album() {
               trackId={ song.trackId }
               trackNumber={ song.trackNumber }
               song={ song }
-              onSelectingSong={ onSelectingSong }
             />
             ))}
           </section>

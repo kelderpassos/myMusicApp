@@ -46,6 +46,7 @@ export function Search() {
                   />
                 </label>
                 <button
+                  name="searchBtn"
                   type="submit"
                   onClick={handleSearchButton}
                   disabled={isInputEmpty}

@@ -9,16 +9,18 @@ import NotFound from './pages/NotFound';
 import './global.css'
 
 function App() {
-  return (    
+  return (
+    <div>    
       <Routes>
-        <Route exact path="/" element={<Login />}></Route>
-        <Route exact path="/search" element={<Search />}></Route>
-        <Route exact path="/album/:id" element={<Album />}></Route>
-        <Route exact path="/favorites" element={<Favorites />}></Route>
-        <Route exact path="/profile" element={<Profile />}></Route>
-        <Route exact path="/profile/edit" element={<ProfileEdit />}></Route>
-        <Route exact path="*" element={<NotFound />}></Route>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/search" element={<Search />} />
+        <Route exact path="/album/:id" element={<Album />} />
+        <Route exact path="/favorites" element={<Favorites />} />
+        <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/profile/edit" element={<ProfileEdit />} />
+        <Route exact path="*" element={<NotFound />} />
       </Routes>
+    </div>
   )
 }
 
