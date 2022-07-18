@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { createUser } from '../services/userAPI';
-import {Loading} from '../Components/Loading';
+import { Loading } from '../Components/Loading';
 import styles from './Login.module.css';
 import logo from '../Images/logo.png'; // colocar svg
 
