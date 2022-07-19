@@ -8,7 +8,7 @@
  - Save your favorite ones to check whenever you want;
  - Edit your personal profile;
 
-[Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/Images/Preview.png)
+![Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/Images/Preview.png)
 
 ## Lessons Learned
 
