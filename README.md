@@ -8,7 +8,7 @@
  - Save your favorite ones to check whenever you want;
  - Edit your personal profile;
 
-<img src="Images/Preview.png" width="250">
+<img src="[Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/Images/Preview.png)" width="250">
 
 ## Lessons Learned
 
