@@ -8,6 +8,10 @@
  - Save your favorite ones to check whenever you want;
  - Edit your personal profile;
 
+## Screenshots
+
+ ![Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/Images/Preview.png)
+
 ## Authors
 
 - [@kelderpassos](https://www.github.com/kelderpassos)
@@ -25,21 +29,14 @@ being my first personal project. I was able to practice and learn:
 - Stabilish routes with React Router Dom v6
 
 
-
-
-
-
 ## Challenges
 - Config and develop tests with Vitest (the toughest challenge, still under development);
 - Develop CSS aiming for responsiveness on small devices;
 - Use the same component on different pages;
 
-
 ## Tech Stack
 
 **Client:** React, React Router Dom v6, Styled Components, Vitest and React Testing Library
-
-
 
 ## Installation
 
@@ -49,10 +46,12 @@ being my first personal project. I was able to practice and learn:
  git clone git@github.com:kelderpassos/myMusicApp.git  
 ```
 - Access the project's folder
+
 ```bash
  cd myMusicApp 
 ```
 - Run npm install and start the project
+
 ```bash
  npm install
  npm run dev
