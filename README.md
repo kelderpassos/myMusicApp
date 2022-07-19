@@ -1,5 +1,5 @@
 
-# Hello World! Welcome to myMusic-app!
+# Welcome to myMusic-app!
 
  myMusic-app is an application where you can: 
  - Search for your favorite artists;
@@ -8,7 +8,10 @@
  - Save your favorite ones to check whenever you want;
  - Edit your personal profile;
 
-<img src="/Images/Preview.png" width="250">
+## Authors
+
+- [@kelderpassos](https://www.github.com/kelderpassos)
+
 
 ## Lessons Learned
 
@@ -34,11 +37,24 @@ being my first personal project. I was able to practice and learn:
 
 ## Tech Stack
 
-**Client:** React, React Router Dom v6, Styled Components, Vitest
+**Client:** React, React Router Dom v6, Styled Components, Vitest and React Testing Library
 
 
 
-## Demo
+## Installation
 
-src/Images/Preview.png
+- Clone this repository
 
+```bash
+ git clone git@github.com:kelderpassos/myMusicApp.git  
+```
+- Access the project's folder
+```bash
+ cd myMusicApp 
+```
+- Run npm install and start the project
+```bash
+ npm install
+ npm run dev
+```
+    
