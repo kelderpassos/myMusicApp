@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserCircle } from "phosphor-react";
-import { NavLink } from "react-router-dom";
 import Header from "../Components/Header";
 import { Loading } from '../Components/Loading';
 import { getUser } from "../services/userAPI";
@@ -9,6 +9,7 @@ import styles from './Profile.module.css'
 export function Profile() {
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchUser();
@@ -19,6 +20,12 @@ export function Profile() {
     const request = await getUser();
     setUserData(request);
     setLoading(false);
+  }
+
+  const handleLogoutBtn = () => {
+    localStorage.setItem('favorite_songs', JSON.stringify([]));
+    localStorage.removeItem('user');
+    navigate('/');
   }
 
 
@@ -38,6 +45,7 @@ export function Profile() {
           <p className={styles.email}>{ userData.email }</p>
           <h4 className={styles.descriptionHeader}>Description:</h4>
           <p className={styles.description}>{ userData.description }</p>
+          <button className={styles.logoutBtn} onClick={ handleLogoutBtn }>Logout</button>
         </section>
         )}        
       </main>

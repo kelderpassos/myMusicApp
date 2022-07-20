@@ -24,7 +24,7 @@
 
 .userIcon {
   margin-right: 3rem;
-  margin-left: 10.5rem;
+  margin-left: 9.8rem;
 }
 
 .userImage {
@@ -67,6 +67,18 @@
 .description {
   margin-top: 1rem;
   text-align: justify;
+}
+
+.logoutBtn {
+  border: none;
+  border-radius: 2px;
+
+  height: 2rem;
+  width: 7rem;
+  margin-top: 5rem;
+
+  background-color: var(--silver-200);
+  color: var(--white);
 }
 
 @media (max-width: 768px) {
