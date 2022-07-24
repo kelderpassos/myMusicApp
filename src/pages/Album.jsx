@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../Components/Header';
-import { Loading } from '../Components/Loading';
-import MusicCard from '../Components/MusicCard';
+import Header from '../components/Header';
+import { Loading } from '../components/Loading';
+import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import styles from './Album.module.css';
 
@@ -24,12 +24,6 @@ export function Album() {
     setAlbumInfo(response);
     setLoading(false);
   };
-
-  const onSelectingSong = () => {
-    setLoading(true);
-    setLoading(false);
-    console.log(loading);
-  }
   
   return (
     <div>
@@ -51,7 +45,6 @@ export function Album() {
               trackId={ song.trackId }
               trackNumber={ song.trackNumber }
               song={ song }
-              onSelectingSong={ onSelectingSong }
             />
             ))}
           </section>

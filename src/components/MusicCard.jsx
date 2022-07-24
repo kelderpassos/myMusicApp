@@ -3,7 +3,7 @@ import { useLocation } from 'react-router';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import styles from './MusicCard.module.css';
 
-function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCoverSmall, fetchFavoriteSongs, onSelectingSong }) {
+function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCoverSmall, fetchFavoriteSongs }) {
   const [isChecked, setIsChecked] = useState(false);
   const location = useLocation();
 
@@ -32,7 +32,6 @@ function MusicCard({ song, trackName, trackNumber, trackId, previewUrl, albumCov
       addOrRemoveSong(target); 
       fetchFavoriteSongs();
     }
-    onSelectingSong();
     addOrRemoveSong(target);
   }
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Header from '../Components/Header';
-import { Loading } from '../Components/Loading';
-import MusicCard from '../Components/MusicCard';
+import Header from '../components/Header';
+import { Loading } from '../components/Loading';
+import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import styles from './Favorites.module.css';
 

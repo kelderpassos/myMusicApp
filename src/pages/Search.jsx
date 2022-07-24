@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Header from '../Components/Header';
-import { Loading } from '../Components/Loading';
+import Header from '../components/Header';
+import { Loading } from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import styles from './Search.module.css';
 
@@ -46,6 +46,7 @@ export function Search() {
                   />
                 </label>
                 <button
+                  name="searchBtn"
                   type="submit"
                   onClick={handleSearchButton}
                   disabled={isInputEmpty}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserCircle } from "phosphor-react";
-import Header from '../Components/Header';
-import { Loading } from '../Components/Loading';
+import Header from '../components/Header';
+import { Loading } from '../components/Loading';
 import { getUser, updateUser } from "../services/userAPI";
 import styles from './ProfileEdit.module.css';
 
@@ -11,7 +11,6 @@ export function ProfileEdit() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
-  // const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
 

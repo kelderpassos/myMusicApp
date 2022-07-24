@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
-import { Loading } from '../Components/Loading';
+import { Loading } from '../components/Loading';
 import styles from './Login.module.css';
-import logo from '../Images/logo.png'; // colocar svg
+import logo from '../images/logo.png'; // colocar svg
 
 function Login() {
   const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleInput = ({target}) =>  {
     const name = target.value;
@@ -20,7 +20,7 @@ function Login() {
     setLoading(true);  
     await createUser({name: username});
     setLoading(false);
-    history('/search');  
+    navigate('/search');  
   }
 
   const isInputEmpty = username.length < 2;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserCircle } from "phosphor-react";
-import Header from "../Components/Header";
-import { Loading } from '../Components/Loading';
+import Header from "../components/Header";
+import { Loading } from '../components/Loading';
 import { getUser } from "../services/userAPI";
 import styles from './Profile.module.css'
 
@@ -27,7 +27,6 @@ export function Profile() {
     localStorage.removeItem('user');
     navigate('/');
   }
-
 
   return (
     <div>
