@@ -10,7 +10,7 @@ const mock = {
   artworkUrl100: 'https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/34/0e/c6/340ec6a6-58c5-655a-a9f6-0b872f3e1b91/00042283601826.rgb.jpg/100x100bb.jpg',
 }
 
-describe('Tests the whole login page', () => {
+describe('Tests the login page', () => {
   it('should render the button "Search"', () => {
     renderWithRouter(<App />, { route: '/search' });
 

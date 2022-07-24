@@ -11,7 +11,6 @@ export function ProfileEdit() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
-  // const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
 
