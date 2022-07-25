@@ -10,7 +10,7 @@
 
 ## Screenshots
 
- ![Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/Images/Preview.png)
+ ![Images/Preview.png](https://github.com/kelderpassos/myMusicApp/blob/kelder-passos/src/images/Preview.png)
 
 ## Authors
 
