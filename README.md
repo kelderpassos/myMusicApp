@@ -23,7 +23,7 @@ The main goal of this project is to start put into practice
 what I've learned of Javascript and React on the course of 4 months of studying these technologies
 being my first personal project. I was able to practice and learn:
 - API requests;
-- Develop my CSS skills with Styled Components;
+- Develop my CSS skills with CSS modules;
 - Start for the first time a React project using Vite;
 - Work with Functional Components and Hooks
 - Stabilish routes with React Router Dom v6
