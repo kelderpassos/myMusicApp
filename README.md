@@ -36,7 +36,7 @@ being my first personal project. I was able to practice and learn:
 
 ## Tech Stack
 
-**Client:** React, React Router Dom v6, Styled Components, Vitest and React Testing Library
+**Client:** React, React Router Dom v6, CSS Modules, React Testing Library (Vitest) and Vite
 
 ## Installation
 
