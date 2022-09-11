@@ -13,8 +13,7 @@ describe('Tests the page "/favorites"', () => {
     const loadingTextEl = screen.getAllByText('Loading...');
     expect(loadingTextEl.length).toBe(2);
 
-    await waitForElementToBeRemoved(loadingTextEl, { timeout: 3000});
-    screen.debug();
+    await waitForElementToBeRemoved(loadingTextEl[0], { timeout: 3000});
   });
 
 })

@@ -57,8 +57,6 @@ export function ProfileEdit() {
       case 'image':
         setImage(target.value);
         break;
-      default:
-        break;
     }
   }
     
@@ -78,8 +76,7 @@ export function ProfileEdit() {
     <div>
       <Header />
       <main>        
-        {loading ? <Loading /> : (
-          <section className={styles.userContainer}>
+               <section className={styles.userContainer}>
           <form onSubmit={ handleSubmit }>
             <div className={styles.userImageContainer}>
               {image === '' ? <UserCircle size={60} className={styles.userIcon}/> : <img src={ image } alt={ `user's photo`}  className={styles.userImage} />}            
@@ -92,7 +89,7 @@ export function ProfileEdit() {
               name="name" placeholder="Name" onChange={ handleInput } required />
               <h4 className={styles.email}>Email</h4>
               <input type="text"
-              name="email" placeholder="username@user.com" onChange={ handleInput }
+              name="email" placeholder="username@email.com" onChange={ handleInput }
               required />
               <p>{errorMsg}</p>
               <h4>Description</h4>              
@@ -116,7 +113,7 @@ export function ProfileEdit() {
               </button>
           </form>
         </section>
-        )}
+        
       </main>
     </div>
   )
