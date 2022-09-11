@@ -11,8 +11,7 @@ describe('Tests the profile page', () => {
     await waitForElementToBeRemoved(() => screen.queryAllByText('Loading...'), { timeout: 3000 });    
    
     const defaultIconEl = screen.getByAltText(/undefined/i);
-    expect(defaultIconEl).toBeInTheDocument();
-    
+    expect(defaultIconEl).toBeInTheDocument();    
   });
 
   it('should render the profile button and get to "/profile/edit on click"', async () => {
