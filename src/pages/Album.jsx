@@ -19,8 +19,7 @@ export function Album() {
 
   const fetchSongs = async () => {
     setLoading(true);
-    const response = await getMusics(id)
-    console.log(response);
+    const response = await getMusics(id);
     setArtistInfo(response[0]);
     setAlbumInfo(response);
     setLoading(false);

@@ -1,11 +1,18 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import renderWithRouter from './helpers/renderWithRouter';
-import { getUser, updateUser } from "../services/userAPI";
+import * as userAPI from '../services/userAPI';
 import App from '../App';
 
 const USERIMAGE = `https://vignette.wikia.nocookie.net/joke-battles/images/4/40/18360-doge-doge-simple.jpg/revision/latest?cb=20151209161638`;
+
+const userInfo = {
+  name: 'Doge Dog',
+  email: 'doge.dog@email.com',
+  image: USERIMAGE,
+  description: 'Best meme',
+};
 
 describe('Tests the profile page', () => {
   it('should render the inputs', () => {
@@ -41,11 +48,12 @@ describe('Tests the profile page', () => {
     user.type(inputDescriptionEl, 'Best meme');
 
     expect(buttonEl).toBeDisabled(false);
-
-    await user.click(buttonEl);
     
-    const loadingMessage = await screen.findByText('Loading...');
-    expect(loadingMessage).toBeInTheDocument();
-  });
-  
+    await user.click(buttonEl);
+    const spy = vi.spyOn(userAPI, 'updateUser');
+    userAPI.updateUser(userInfo);
+
+    expect(spy).toHaveBeenCalled();
+    
+  });  
 });
